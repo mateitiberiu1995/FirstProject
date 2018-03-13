@@ -17,13 +17,33 @@ public class garage{
 	}
 	public int Repair(vehicle vehicle)
 	{
-		return vehicle.getMotor()*100;
+		//boolean isList = vehicle.class.isAssignableFrom(car);
+		boolean isInstance = vehicle instanceof car;
+		if(isInstance==true)
+		{
+			boolean automatic = ((car)vehicle).getAutomatic();
+			if(automatic==true)
+				return vehicle.getMotor()*100+100;
+			else
+				return vehicle.getMotor()*100;
+		}
+		isInstance = vehicle instanceof motorcycle;
+		if(isInstance==true)
+		{
+			int speed=((motorcycle)vehicle).getTopSpeed();
+			return vehicle.getMotor()*100+speed/2;
+		}
+		isInstance = vehicle instanceof truck;
+		if(isInstance==true)
+			return vehicle.getMotor()*100+((truck)vehicle).getLoad()*10;
+		return 0;
 	}
 	public void emptyGarage()
 	{
 		while(vehicleList.size()!=0)
 		{
 			vehicleList.remove(0);
+
 		}
 	}
 	public void Show()

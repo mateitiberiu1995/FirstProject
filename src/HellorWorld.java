@@ -7,15 +7,26 @@ public class HellorWorld {
 	public static void main(String[] args) 
 	{
 
-		String firstSequence;
+		/*String firstSequence;
 		String secondSequence;
 		firstSequence= "dsafastjbdaascxa";
 		secondSequence="dsafastgasfavaxvassfsatgsaknvasj";
 		if(firstSequence.length()>=secondSequence.length())
 			changeSequence(firstSequence,secondSequence);
 		else
-			changeSequence(secondSequence,firstSequence);
-		
+			changeSequence(secondSequence,firstSequence);*/
+		car Bmw = new car(true,4,2200,"BMW","x5","abc567");
+		motorcycle suzuki = new motorcycle(220,4,1500,"suzuki","i50","dsar42");
+		garage myGarage = new garage();
+		myGarage.Add(Bmw);
+		myGarage.Add(suzuki);
+		myGarage.Show();
+		//myGarage.Remove("dsar42");
+		//myGarage.Show();
+		//System.out.println("ceva");
+		//myGarage.emptyGarage();
+		//myGarage.Show();
+		System.out.println(myGarage.Repair(Bmw));
 		
 		
 	}
